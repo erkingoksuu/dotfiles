@@ -82,7 +82,7 @@ notify-send "Update complete"
 echo 
 echo ":: Update complete"
 echo 
-echo 
-
+source ~/.config/main/scripts/updates.sh
+echo
 echo "Press [ENTER] to close."
 read

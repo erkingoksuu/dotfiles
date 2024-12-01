@@ -49,18 +49,17 @@ esac
 # Output in JSON format for Waybar Module custom-updates
 # ----------------------------------------------------- 
 
-css_class="green"
-
-if [ "$updates" -gt $threshhold_yellow ]; then
-    css_class="yellow"
-fi
-
-if [ "$updates" -gt $threshhold_red ]; then
-    css_class="red"
-fi
+css_class="noupdate"
 
 if [ "$updates" -gt $threshhold_green ]; then
+    css_class="green"
+    printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$updates" "$css_class"
+elif [ "$updates" -gt $threshhold_yellow ]; then
+    css_class="yellow"
+    printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$updates" "$css_class"
+elif [ "$updates" -gt $threshhold_red ]; then
+    css_class="red"
     printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$updates" "$css_class"
 else
-    printf '{"text": "0", "alt": "0", "tooltip": "No updates available", "class": "green"}'
+    printf '{"text": "0", "alt": "0", "tooltip": "No updates available", "class": "%s"}' "$css_class"
 fi

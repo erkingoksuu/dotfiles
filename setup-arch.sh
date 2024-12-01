@@ -47,6 +47,83 @@ _installPackages() {
     sudo pacman --noconfirm -S "${toInstall[@]}";
 }
 
+choice=""
+
+_define_setup_type() {
+    _writeMessage "Please define setup type."
+    echo 
+    _writeMessage "full: Run full installation"
+    _writeMessage "packages: Run installation of packages only"
+    _writeMessage "nvidia: Run full installation with NVIDA Driver installation (beta, not recomended)"
+    _writeMessage "dotfiles: Run the setup of the dotfiles only"
+    echo 
+    choice=$(gum input --placeholder "Enter enter setup type")
+    echo 
+    echo $choice
+    if [[ $choice == "full" || $choice == "packages" || $choice == "nvidia" || $choice == "dotfiles" ]]; then
+        _confirm_setup_type
+    else
+        _writeMessage "Please choose correct one."
+        _define_setup_type
+    fi
+}
+
+_confirm_setup_type() {
+    if [[ $choice == "full" ]] ;then
+        echo 
+        _writeLogTerminal 0 "Your chice is $choice"
+        if gum confirm "Do you want use this choice?" ;then
+            _writeLogTerminal 1 "Starting..."
+            # Start setup
+            ./backup-hyprland-setup -p arch -m full
+        elif [ $? -eq 130 ]; then
+            _writeCancel
+            exit 130
+        else
+            _define_setup_type
+        fi
+    elif [[ $choice == "packages" ]] ;then
+        echo 
+        _writeLogTerminal 0 "Your chice is $choice"
+        if gum confirm "Do you want use this choice?" ;then
+            _writeLogTerminal 1 "Starting..."
+            # Start setup
+            ./backup-hyprland-setup -p arch -m packages
+        elif [ $? -eq 130 ]; then
+            _writeCancel
+            exit 130
+        else
+            _define_setup_type
+        fi
+    elif [[ $choice == "nvidia" ]] ;then
+        echo 
+        _writeLogTerminal 0 "Your chice is $choice"
+        if gum confirm "Do you want use this choice?" ;then
+            _writeLogTerminal 1 "Starting..."
+            # Start setup
+            ./backup-hyprland-setup -p arch -m nvidia
+        elif [ $? -eq 130 ]; then
+            _writeCancel
+            exit 130
+        else
+            _define_setup_type
+        fi
+    elif [[ $choice == "dotfiles" ]] ;then
+        echo 
+        _writeLogTerminal 0 "Your chice is $choice"
+        if gum confirm "Do you want use this choice?" ;then
+            _writeLogTerminal 1 "Starting..."
+            # Start setup
+            ./backup-hyprland-setup -p arch -m dotfiles
+        elif [ $? -eq 130 ]; then
+            _writeCancel
+            exit 130
+        else
+            _define_setup_type
+        fi
+    fi
+}
+
 # Required packages for the installer
 packages=(
     "wget"
@@ -162,4 +239,4 @@ echo
 gum spin --spinner dot --title "Starting setup now..." -- sleep 3
 
 # Start setup
-./backup-hyprland-setup -p arch
+_define_setup_type
