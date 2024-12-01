@@ -11,7 +11,7 @@ restore_arr=(
     ".config/gtk-3.0"
     ".config/gtk-4.0"
     ".gtkrc-2.0"
-    ".config/ml4w/settings"
+    ".config/main/settings"
     ".config/hypr/hypridle.conf"
     ".config/hypr/conf/custom.conf"
     ".config/hypr/conf/keyboard.conf"
@@ -39,10 +39,10 @@ _restoreItem() {
     if [[ $restoreselect == *"$1"* ]] ; then
         if [ -d $HOME/$dot_folder/$1 ]; then
             _writeLog 0 "Restore Folder $1"
-            rsync -a -I $HOME/$dot_folder/$1/ $ml4w_directory/$version/$1/ &>> $(_getLogFile)
+            rsync -a -I $HOME/$dot_folder/$1/ $temp_directory/$version/$1/ &>> $(_getLogFile)
         elif [ -f $HOME/$dot_folder/$1 ]; then
             _writeLog 0 "Restore File $1"
-            cp $HOME/$dot_folder/$1 $ml4w_directory/$version/$1
+            cp $HOME/$dot_folder/$1 $temp_directory/$version/$1
         fi
         _writeLog 1 "Hyprland $1 restored"                
     fi    
@@ -105,28 +105,28 @@ _startRestore() {
     done    
 
     # Check Wallpaper
-    if [ -f ~/.config/ml4w/cache/blurred_wallpaper.png ] ;then
-        rm $ml4w_directory/$version/.config/ml4w/cache/blurred_wallpaper.png
+    if [ -f ~/.config/main/cache/blurred_wallpaper.png ] ;then
+        rm $temp_directory/$version/.config/main/cache/blurred_wallpaper.png
     elif [ -f ~/.cache/blurred_wallpaper.png ] ;then
-        cp ~/.cache/blurred_wallpaper.png $ml4w_directory/$version/.config/ml4w/cache/blurred_wallpaper.png
+        cp ~/.cache/blurred_wallpaper.png $temp_directory/$version/.config/main/cache/blurred_wallpaper.png
     fi
 
-    if [ -f ~/.config/ml4w/cache/current_wallpaper ] ;then
-        rm $ml4w_directory/$version/.config/ml4w/cache/current_wallpaper
+    if [ -f ~/.config/main/cache/current_wallpaper ] ;then
+        rm $temp_directory/$version/.config/main/cache/current_wallpaper
     elif [ -f ~/.cache/current_wallpaper ] ;then
-        cp ~/.cache/current_wallpaper $ml4w_directory/$version/.config/ml4w/cache/current_wallpaper
+        cp ~/.cache/current_wallpaper $temp_directory/$version/.config/main/cache/current_wallpaper
     fi
     
-    if [ -f ~/.config/ml4w/cache/current_wallpaper.rasi ] ;then
-        rm $ml4w_directory/$version/.config/ml4w/cache/current_wallpaper.rasi
+    if [ -f ~/.config/main/cache/current_wallpaper.rasi ] ;then
+        rm $temp_directory/$version/.config/main/cache/current_wallpaper.rasi
     elif [ -f ~/.cache/current_wallpaper.rasi ] ;then
-        cp ~/.cache/current_wallpaper.rasi $ml4w_directory/$version/.config/ml4w/cache/current_wallpaper.rasi
+        cp ~/.cache/current_wallpaper.rasi $temp_directory/$version/.config/main/cache/current_wallpaper.rasi
     fi
     
-    if [ -f ~/.config/ml4w/cache/square_wallpaper.png ] ;then
-        rm $ml4w_directory/$version/.config/ml4w/cache/square_wallpaper.png
+    if [ -f ~/.config/main/cache/square_wallpaper.png ] ;then
+        rm $temp_directory/$version/.config/main/cache/square_wallpaper.png
     elif [ -f ~/.cache/square_wallpaper.png ] ;then
-        cp ~/.cache/square_wallpaper.png $ml4w_directory/$version/.config/ml4w/cache/square_wallpaper.png
+        cp ~/.cache/square_wallpaper.png $temp_directory/$version/.config/main/cache/square_wallpaper.png
     fi
     
     restored=1

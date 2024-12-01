@@ -1,5 +1,5 @@
 # ------------------------------------------------------
-# init pywal with default wallpaper
+# init pywal with wallpaper
 # ------------------------------------------------------
 _writeLogHeader "Pywal"
 if [ ! -f ~/.cache/wal/colors-hyprland.conf ]; then

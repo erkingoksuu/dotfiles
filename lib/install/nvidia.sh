@@ -56,5 +56,3 @@ if [[ $nvidia =~ ^[Yy]$ ]]; then
 else
   _writeSkipped
 fi
-
-

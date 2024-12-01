@@ -5,7 +5,7 @@ _writeLogHeader "Wallpaper"
 
 if [ -d $HOME/.config/waypaper ]; then
     _writeLog 0 "Waypaper configuration exists"
-    rm -rf $ml4w_directory/$version/.config/waypaper
+    rm -rf $temp_directory/$version/.config/waypaper
 else
     if [ -d ~/wallpaper/ ]; then
         _writeLog 0 "$HOME/wallpaper folder already exists."
@@ -32,4 +32,3 @@ else
     fi
 fi
 echo
-

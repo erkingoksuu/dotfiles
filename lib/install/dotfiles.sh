@@ -117,7 +117,7 @@ source $install_directory/dotfiles/pywal.sh
 source $install_directory/dotfiles/settings.sh
 
 # ----------------------------------------------------- 
-# Install ML4W Apps
+# Install Backup Apps
 # ----------------------------------------------------- 
 source $install_directory/dotfiles/apps.sh
 
@@ -135,4 +135,3 @@ source $install_directory/dotfiles/post.sh
 # Offer Reboot
 # ----------------------------------------------------- 
 source $install_directory/dotfiles/reboot.sh
-

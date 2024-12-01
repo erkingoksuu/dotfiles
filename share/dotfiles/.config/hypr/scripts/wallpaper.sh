@@ -10,7 +10,7 @@
 # Check to use wallpaper cache
 # ----------------------------------------------------- 
 
-if [ -f ~/.config/ml4w/settings/wallpaper_cache ]; then
+if [ -f ~/.config/main/settings/wallpaper_cache ]; then
     use_cache=1
     echo ":: Using Wallpaper Cache"
 else
@@ -23,15 +23,15 @@ fi
 # ----------------------------------------------------- 
 
 force_generate=0
-generatedversions="$HOME/.config/ml4w/cache/wallpaper-generated"
-waypaperrunning=$HOME/.config/ml4w/cache/waypaper-running
-cachefile="$HOME/.config/ml4w/cache/current_wallpaper"
-blurredwallpaper="$HOME/.config/ml4w/cache/blurred_wallpaper.png"
-squarewallpaper="$HOME/.config/ml4w/cache/square_wallpaper.png"
-rasifile="$HOME/.config/ml4w/cache/current_wallpaper.rasi"
-blurfile="$HOME/.config/ml4w/settings/blur.sh"
+generatedversions="$HOME/.config/main/cache/wallpaper-generated"
+waypaperrunning=$HOME/.config/main/cache/waypaper-running
+cachefile="$HOME/.config/main/cache/current_wallpaper"
+blurredwallpaper="$HOME/.config/main/cache/blurred_wallpaper.png"
+squarewallpaper="$HOME/.config/main/cache/square_wallpaper.png"
+rasifile="$HOME/.config/main/cache/current_wallpaper.rasi"
+blurfile="$HOME/.config/main/settings/blur.sh"
 defaultwallpaper="$HOME/wallpaper/default.jpg"
-wallpapereffect="$HOME/.config/ml4w/settings/wallpaper-effect.sh"
+wallpapereffect="$HOME/.config/main/settings/wallpaper-effect.sh"
 blur="50x30"
 blur=$(cat $blurfile)
 
@@ -161,7 +161,7 @@ cp $generatedversions/blur-$blur-$effect-$wallpaperfilename.png $blurredwallpape
 if [ ! -f $rasifile ]; then
     touch $rasifile
 fi
-echo "* { current-image: url(\"$blurredwallpaper\", height); }" > "$rasifile"
+#echo "* { current-image: url("", height); }" > "$rasifile"
 
 # ----------------------------------------------------- 
 # Created square wallpaper
@@ -170,4 +170,3 @@ echo "* { current-image: url(\"$blurredwallpaper\", height); }" > "$rasifile"
 echo ":: Generate new cached wallpaper square-$wallpaperfilename"
 magick $tmpwallpaper -gravity Center -extent 1:1 $squarewallpaper
 cp $squarewallpaper $generatedversions/square-$wallpaperfilename.png
-

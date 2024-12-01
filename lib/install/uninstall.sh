@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 sleep 1
-dot_folder=$(cat ~/.config/ml4w/settings/dotfiles-folder.sh)
+dot_folder=$(cat ~/.config/main/settings/dotfiles-folder.sh)
 # Some colors
 GREEN='\033[0;32m'
 NONE='\033[0m'
@@ -9,11 +9,11 @@ NONE='\033[0m'
 # Header
 echo -e "${GREEN}"
 figlet -f smslant "Uninstaller"
-echo "for ML4W Dotfiles"
+echo "for Backup Dotfiles"
 echo
 echo -e "${NONE}"
-echo "This script will support you to uninstall the ML4W Dotfiles in ~/$dot_folder from your system."
-echo "Only the ML4W Dotfiles related files and folders will be removed."
+echo "This script will support you to uninstall the Backup Dotfiles in ~/$dot_folder from your system."
+echo "Only the Backup Dotfiles related files and folders will be removed."
 echo "Packages are not uninstalled. You have to uninstall packages manually if needed."
 echo "Your login manager (display manager) will stay untouched. Please remove it manually if needed."
 echo 
@@ -28,8 +28,8 @@ else
 fi
 
 if gum confirm "DO YOU WANT TO CREATE A BACKUP OF YOUR DOTFILES?" ;then
-    rsync -a ~/$dot_folder ~/.ml4w-hyprland/backup/
-    echo ":: Backup of $HOME/$dot_folder created in ~/.ml4w-hyprland/backup"
+    rsync -a ~/$dot_folder ~/.temp-hyprland/backup/
+    echo ":: Backup of $HOME/$dot_folder created in ~/.temp-hyprland/backup"
 elif [ $? -eq 130 ]; then
     echo ":: Uninstallation canceled."
     exit 130
@@ -38,7 +38,7 @@ else
 fi
 
 if [ ! -z $dot_folder ] ;then
-    if [ -f ~/.config/ml4w/settings/dotfiles-folder.sh ] ;then
+    if [ -f ~/.config/main/settings/dotfiles-folder.sh ] ;then
         rm -rf $HOME/$dot_folder
         echo ":: $HOME/$dot_folder removed"
     fi
@@ -107,8 +107,8 @@ fi
 if test -L ~/.config/qt6ct ;then
     rm $HOME/.config/qt6ct
 fi
-if test -L ~/.config/ml4w ;then
-    rm $HOME/.config/ml4w
+if test -L ~/.config/main ;then
+    rm $HOME/.config/main
 fi
 if test -L ~/.config/ohmyposh ;then
     rm $HOME/.config/ohmyposh
@@ -118,9 +118,9 @@ if test -L ~/.config/xsettingsd ;then
 fi
 echo ":: Symlinks removed"
 
-# Uninstall the ML4W Apps
+# Uninstall the Main Apps
 
-app_name="com.ml4w.welcome"
+app_name="com.main.welcome"
 if [ -f /usr/share/applications/$app_name.desktop ] ;then
     sudo rm /usr/share/applications/$app_name.desktop
 fi
@@ -133,9 +133,9 @@ fi
 if [ -f /usr/bin/$app_name ] ;then
     sudo rm /usr/bin/$app_name
 fi
-echo ":: ML4W Welcome App uninstalled successfully"
+echo ":: Main Welcome App uninstalled successfully"
 
-app_name="com.ml4w.dotfilessettings"
+app_name="com.main.dotfilessettings"
 if [ -f /usr/share/applications/$app_name.desktop ] ;then
     sudo rm /usr/share/applications/$app_name.desktop
 fi
@@ -148,9 +148,9 @@ fi
 if [ -f /usr/bin/$app_name ] ;then
     sudo rm /usr/bin/$app_name
 fi
-echo ":: ML4W Settings App uninstalled successfully"
+echo ":: Main Settings App uninstalled successfully"
 
-app_name="com.ml4w.hyprland.settings"
+app_name="com.main.hyprland.settings"
 if [ -f /usr/share/applications/$app_name.desktop ] ;then
     sudo rm /usr/share/applications/$app_name.desktop
 fi
@@ -163,12 +163,12 @@ fi
 if [ -f /usr/bin/$app_name ] ;then
     sudo rm /usr/bin/$app_name
 fi
-echo ":: ML4W Hyprland Settings App uninstalled successfully"
+echo ":: Main Hyprland Settings App uninstalled successfully"
 
-echo ":: ML4W Apps removed"
+echo ":: Main Apps removed"
 
-if gum confirm "DO YOU WANT TO RESTORE OLD CONFIGURATIONS FROM ~/.ml4w-hyprland/backup/config TO ~/.config?" ;then
-    rsync -a ~/.ml4w-hyprland/backup/config/ ~/.config/
+if gum confirm "DO YOU WANT TO RESTORE OLD CONFIGURATIONS FROM ~/.temp-hyprland/backup/config TO ~/.config?" ;then
+    rsync -a ~/.temp-hyprland/backup/config/ ~/.config/
     echo ":: Old configuration files restored in .config."
 elif [ $? -eq 130 ]; then
     echo ":: Uninstaller canceled."
@@ -177,18 +177,18 @@ else
     echo ":: .config restore skipped."
 fi
 
-if gum confirm "DO YOU WANT TO KEEP ~/.ml4w-hyprland WITH ALL BACKUPS?" ;then
-    echo ":: You will find the folder .ml4w-hyprland including your backups in your HOME folder."
+if gum confirm "DO YOU WANT TO KEEP ~/.temp-hyprland WITH ALL BACKUPS?" ;then
+    echo ":: You will find the folder .temp-hyprland including your backups in your HOME folder."
 elif [ $? -eq 130 ]; then
     echo ":: Uninstaller canceled."
     exit 130
 else
-    rm -rf $HOME/.ml4w-hyprland
-    echo ":: $HOME/.ml4w-hyprland folder removed"
+    rm -rf $HOME/.temp-hyprland
+    echo ":: $HOME/.temp-hyprland folder removed"
 fi
 
 figlet -f smslant "DONE"
-echo ":: The ML4W Dotfiles have been removed."
+echo ":: The Backup Dotfiles have been removed."
 echo
 echo ":: A reboot of your system is recommended."
 echo

@@ -6,7 +6,7 @@ source library/scripts.sh
 # ------------------------------------------------------
 
 # Show Current version
-echo ":: Running hook for ML4W Dotfiles $version"
+echo ":: Running hook for Backup Dotfiles $version"
 
 # Install additional packages
 _installPackagesPacman "kitty"

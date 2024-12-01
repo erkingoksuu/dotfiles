@@ -1,0 +1,1 @@
+$(cat ~/.config/main/settings/browser.sh) --new-window https://chat.openai.com

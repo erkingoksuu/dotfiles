@@ -5,7 +5,7 @@ _writeLogHeader "Platform"
 
 # Select the platform if not defined with parameter
 if [ -z $install_platform ]; then
-    _writeMessage "Please select your platform to install the ML4W Dotfiles."
+    _writeMessage "Please select your platform to install the Backup Dotfiles."
     if _checkCommandExists "gum"; then
         echo
         install_platform=$(gum choose "arch" "fedora" "CANCEL")

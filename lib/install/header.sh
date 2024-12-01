@@ -14,17 +14,14 @@ cat <<"EOF"
                                                         
 EOF
 echo "for Hyprland"
-echo "by Stephan Raabe"
 echo -e "${NONE}"
-
 echo "Version: $version"
 echo "Platform: $install_platform" 
 echo
-# echo ":: You're running the script in $(pwd)"
 if [[ $(_check_update) == "true" ]] ;then
-    _writeLog 0 "An existing ML4W Dotfiles installation detected."
-    _writeMessage "This script will guide you through the update process of the ML4W Dotfiles."
+    _writeLog 0 "An existing Backup Dotfiles installation detected."
+    _writeMessage "This script will guide you through the update process of the Backup Dotfiles."
 else
-    _writeLog 0 "Initial installation of ML4W Dotfiles started."
-    _writeMessage "This script will guide you through the installation process of the ML4W dotfiles."
+    _writeLog 0 "Initial installation of Backup Dotfiles started."
+    _writeMessage "This script will guide you through the installation process of the Backup dotfiles."
 fi

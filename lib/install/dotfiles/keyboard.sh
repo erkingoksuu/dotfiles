@@ -50,36 +50,33 @@ _keyboard_confirm() {
     fi
 
     if [ "$setkeyboard" == "0" ] ;then
-
         # Default layout and variants
-        keyboard_layout="us"
-        keyboard_variant=""
-
+        keyboard_layout="tr"
+        keyboard_variant="us"
         _confirmKeyboard
-
         if gum confirm "Are you using a laptop and would you like to enable the laptop presets?"; then
-            cp $template_directory/keyboard-laptop.conf $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
-            echo "source = ~/.config/hypr/conf/layouts/laptop.conf" > $ml4w_directory/$version/.config/hypr/conf/layout.conf
+            cp $template_directory/keyboard-laptop.conf $temp_directory/$version/.config/hypr/conf/keyboard.conf
+            echo "source = ~/.config/hypr/conf/layouts/laptop.conf" > $temp_directory/$version/.config/hypr/conf/layout.conf
         elif [ $? -eq 130 ]; then
             _writeCancel
             exit 130
         else
-            cp $template_directory/keyboard-default.conf $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
+            cp $template_directory/keyboard-default.conf $temp_directory/$version/.config/hypr/conf/keyboard.conf
         fi
 
         SEARCH="KEYBOARD_LAYOUT"
         REPLACE="$keyboard_layout"
-        sed -i "s/$SEARCH/$REPLACE/g" $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
+        sed -i "s/$SEARCH/$REPLACE/g" $temp_directory/$version/.config/hypr/conf/keyboard.conf
 
         # Set french keyboard variation
         if [[ "$keyboard_layout" == "fr" ]] ;then
-            echo "source = ~/.config/hypr/conf/keybindings/fr.conf" > $ml4w_directory/$version/.config/hypr/conf/keybinding.conf
+            echo "source = ~/.config/hypr/conf/keybindings/fr.conf" > $temp_directory/$version/.config/hypr/conf/keybinding.conf
             _writeLog 0 "Optimized keybindings for french keyboard layout"
         fi
 
         SEARCH="KEYBOARD_VARIANT"
         REPLACE="$keyboard_variant"
-        sed -i "s/$SEARCH/$REPLACE/g" $ml4w_directory/$version/.config/hypr/conf/keyboard.conf
+        sed -i "s/$SEARCH/$REPLACE/g" $temp_directory/$version/.config/hypr/conf/keyboard.conf
 
         echo
         _writeLogTerminal 1 "Keyboard setup complete."

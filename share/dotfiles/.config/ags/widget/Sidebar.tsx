@@ -29,17 +29,17 @@ function MicrophoneSlider() {
 }
 
 function openwelcomeapp() {
-    execAsync("com.ml4w.welcome")
+    execAsync("com.main.welcome")
     App.get_window("sidebar")!.hide()
 }
 
 function opensettingsapp() {
-    execAsync("com.ml4w.dotfilessettings")
+    execAsync("com.main.dotfilessettings")
     App.get_window("sidebar")!.hide()
 }
 
 function openhyprlandapp() {
-    execAsync("com.ml4w.hyprland.settings")
+    execAsync("com.main.hyprland.settings")
     App.get_window("sidebar")!.hide()
 }
 
@@ -74,9 +74,9 @@ export default function Sidebar() {
         <box css="padding-bottom:20px;">
             <box className="group" vertical>
                 <box homogeneous>
-                    <button onClicked={openwelcomeapp} className="ml4wwelcomeicon"></button>
-                    <button onClicked={opensettingsapp} className="ml4wsettingsicon"></button>
-                    <button onClicked={openhyprlandapp} className="ml4whyprlandicon"></button>
+                    <button onClicked={openwelcomeapp} className="mainwelcomeicon"></button>
+                    <button onClicked={opensettingsapp} className="mainsettingsicon"></button>
+                    <button onClicked={openhyprlandapp} className="mainhyprlandicon"></button>
                 </box>
                 <box homogeneous>
                     <button onClicked={openwelcomeapp}>Welcome App</button>

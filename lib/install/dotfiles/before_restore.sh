@@ -13,19 +13,19 @@ if [ -d ~/$dot_folder/.settings ] ;then
             mkdir ~/$dot_folder/.config
         fi
         mv -f ~/$dot_folder/* ~/$dot_folder/.config/
-        if [ ! -d ~/$dot_folder/.config/ml4w ] ;then
-            mkdir ~/$dot_folder/.config/ml4w
+        if [ ! -d ~/$dot_folder/.config/main ] ;then
+            mkdir ~/$dot_folder/.config/main
         fi
 
-        # ml4w folder
-        _move_folder ~/$dot_folder/.settings ~/$dot_folder/.config/ml4w/settings
-        _move_folder ~/$dot_folder/.config/scripts ~/$dot_folder/.config/ml4w/scripts
-        _move_folder ~/$dot_folder/.version  ~/$dot_folder/.config/ml4w/version
-        _move_folder ~/$dot_folder/.config/apps ~/$dot_folder/.config/ml4w/apps
-        _move_folder ~/$dot_folder/.config/login ~/$dot_folder/.config/ml4w/login
-        _move_folder ~/$dot_folder/.config/sddm ~/$dot_folder/.config/ml4w/sddm
-        _move_file ~/$dot_folder/.config/update.sh ~/$dot_folder/.config/ml4w/update.sh
-        _move_file ~/$dot_folder/.config/uninstall.sh ~/$dot_folder/.config/ml4w/uninstall.sh
+        # main folder
+        _move_folder ~/$dot_folder/.settings ~/$dot_folder/.config/main/settings
+        _move_folder ~/$dot_folder/.config/scripts ~/$dot_folder/.config/main/scripts
+        _move_folder ~/$dot_folder/.version  ~/$dot_folder/.config/main/version
+        _move_folder ~/$dot_folder/.config/apps ~/$dot_folder/.config/main/apps
+        _move_folder ~/$dot_folder/.config/login ~/$dot_folder/.config/main/login
+        _move_folder ~/$dot_folder/.config/sddm ~/$dot_folder/.config/main/sddm
+        _move_file ~/$dot_folder/.config/update.sh ~/$dot_folder/.config/main/update.sh
+        _move_file ~/$dot_folder/.config/uninstall.sh ~/$dot_folder/.config/main/uninstall.sh
 
         # dotfiles
         _move_folder ~/$dot_folder/.config/gtk/gtk3.0 ~/$dot_folder/.config/gtk3.0
@@ -37,7 +37,7 @@ if [ -d ~/$dot_folder/.settings ] ;then
         _del_folder ~/$dot_folder/eww
 
         # Replace Quicklink
-        sed -i -e 's/dotfiles\/.settings/.config\/ml4w\/settings/g' ~/$dot_folder/.config/ml4w/settings/waybar-quicklinks.json
+        sed -i -e 's/dotfiles\/.settings/.config\/main\/settings/g' ~/$dot_folder/.config/main/settings/waybar-quicklinks.json
     fi
 fi
 

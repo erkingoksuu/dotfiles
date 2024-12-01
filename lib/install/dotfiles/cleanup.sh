@@ -4,15 +4,15 @@
 _writeLogHeader "Finalizing"
 
 # Create platform file if not exists
-if [ ! -f $HOME/.config/ml4w/settings/platform.sh ]; then
-    touch $HOME/.config/ml4w/settings/platform.sh
+if [ ! -f $HOME/.config/main/settings/platform.sh ]; then
+    touch $HOME/.config/main/settings/platform.sh
 fi
-echo "$install_platform" > $HOME/.config/ml4w/settings/platform.sh
+echo "$install_platform" > $HOME/.config/main/settings/platform.sh
 _writeLog 1 "platform.sh with $install_platform created"
 
 # Cache file for holding the current wallpaper
-cache_file="$HOME/.config/ml4w/cache/current_wallpaper"
-rasi_file="$HOME/.config/ml4w/cache/current_wallpaper.rasi"
+cache_file="$HOME/.config/main/cache/current_wallpaper"
+rasi_file="$HOME/.config/main/cache/current_wallpaper.rasi"
 
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
@@ -24,7 +24,7 @@ fi
 # Create rasi file if not exists
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
-    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
+    #echo "* { current-image: url("", height); }" > "$rasi_file"
     _writeLog 1 "Wallpaper rasi file created"
 fi
 
@@ -59,14 +59,14 @@ if [ -d ~/$dot_folder/hypr/settings/ ] ;then
     _writeLog 1 "~/dotfiles/hypr/settings removed."
 fi
 
-if [ -f ~/.local/share/applications/ml4w-welcome.desktop ] ;then
-    rm ~/.local/share/applications/ml4w-welcome.desktop
+if [ -f ~/.local/share/applications/main-welcome.desktop ] ;then
+    rm ~/.local/share/applications/main-welcome.desktop
 fi
-if [ -f ~/.local/share/applications/ml4w-dotfiles-settings.desktop ] ;then
-    rm ~/.local/share/applications/ml4w-dotfiles-settings.desktop
+if [ -f ~/.local/share/applications/main-dotfiles-settings.desktop ] ;then
+    rm ~/.local/share/applications/main-dotfiles-settings.desktop
 fi
-if [ -f ~/.local/share/applications/ml4w-hyprland-settings.desktop ] ;then
-    rm ~/.local/share/applications/ml4w-hyprland-settings.desktop
+if [ -f ~/.local/share/applications/main-hyprland-settings.desktop ] ;then
+    rm ~/.local/share/applications/main-hyprland-settings.desktop
 fi
 
 # Create default folder structure

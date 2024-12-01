@@ -6,8 +6,6 @@ sddm_theme_master="main.zip"
 sddm_theme_folder="sddm-sequoia-main"
 sddm_theme_download="https://github.com/minMelody/sddm-sequoia/archive/refs/heads/main.zip"
 sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
-# sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sequoia
-
 sddm_theme_tpl="$share_directory/sddm/theme.conf"
 
 if [ -z $automation_displaymanager ] ;then

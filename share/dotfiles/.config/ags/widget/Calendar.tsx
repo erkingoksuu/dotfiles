@@ -31,7 +31,7 @@ export default function Calendar() {
         showDayNames: true,
         showDetails: false,
         showHeading: true,
-        showWeekNumbers: true
+        showWeekNumbers: false
     })}</box>
 </window>
 }

@@ -77,5 +77,4 @@ if [ ! -z $automation_aur ] ;then
 else
     _checkAURHelper
 fi
-
 fi

@@ -5,7 +5,6 @@
 #   | | | | | |  __/ | | | | |  __/\__ \\ V  V /| | || (__| | | |  __/ |    
 #   |_| |_| |_|\___|_| |_| |_|\___||___/ \_/\_/ |_|\__\___|_| |_|\___|_|    
 #                                                                           
-# by Stephan Raabe (2024) 
 # ----------------------------------------------------- 
 
 # ----------------------------------------------------- 
@@ -56,11 +55,11 @@ input=$listNames2
 read -ra array <<< "$input"
 
 # ----------------------------------------------------- 
-# Set new theme by writing the theme information to ~/.config/ml4w/settings/waybar-theme.sh
+# Set new theme by writing the theme information to ~/.config/main/settings/waybar-theme.sh
 # ----------------------------------------------------- 
 if [ "$choice" ]; then
     echo "Loading waybar theme..."
-    echo "${listThemes[$choice+1]}" > ~/.config/ml4w/settings/waybar-theme.sh
+    echo "${listThemes[$choice+1]}" > ~/.config/main/settings/waybar-theme.sh
     ~/.config/waybar/launch.sh
     notify-send "Waybar Theme changed" "to ${array[$choice]}"
 fi

@@ -7,7 +7,7 @@
 #                                 |___/              
 # 
 
-wallpaper_engine=$(cat $HOME/.config/ml4w/settings/wallpaper-engine.sh)
+wallpaper_engine=$(cat $HOME/.config/main/settings/wallpaper-engine.sh)
 if [ "$wallpaper_engine" == "swww" ] ;then
     # swww
     echo ":: Using swww"
@@ -24,4 +24,3 @@ else
     echo ":: Wallpaper Engine disabled"
     ~/.config/hypr/scripts/wallpaper.sh init
 fi
-

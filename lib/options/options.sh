@@ -12,8 +12,8 @@ _checkPackages() {
 }
 
 _checkDefault() {
-    if [ -f ~/.config/ml4w/settings/$1 ]; then
-        default="$(cat ~/.config/ml4w/settings/$1)"
+    if [ -f ~/.config/main/settings/$1 ]; then
+        default="$(cat ~/.config/main/settings/$1)"
         echo ":: Current setup: $default"
     else
         echo ":: ERROR: No configuration file found"
@@ -22,8 +22,8 @@ _checkDefault() {
 }
 
 _checkCurrent() {
-    if [ -f ~/.config/ml4w/settings/$1 ]; then
-        default="$(cat ~/.config/ml4w/settings/$1)"
+    if [ -f ~/.config/main/settings/$1 ]; then
+        default="$(cat ~/.config/main/settings/$1)"
         echo $default
     else
         echo "No configuration file found"
@@ -62,7 +62,7 @@ _selectCategory() {
     echo "Platform: $install_platform"
     echo "This script will help you to install some pre-defined package options."
     echo "If your desired package is not listed, you can install it with your package manager "
-    echo "and set it as default application in the ML4W Settings App."
+    echo "and set it as default application in the Backup Settings App."
     echo
     echo "- SDDM:" $(_checkSddm) "/ SDDM Theme:" $(_checkSddmTheme)    
     echo "- Shell: "$SHELL "/ Terminal:" $(_checkCurrent terminal.sh)

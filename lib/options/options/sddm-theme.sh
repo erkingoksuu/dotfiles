@@ -13,8 +13,8 @@ sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
 # sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sequoia
 
 sddm_theme_tpl="$share_directory/sddm/theme.conf"
-if [ -f $HOME/.config/ml4w/settings/sddm/theme.conf ]; then
-    sddm_theme_tpl="$HOME/.config/ml4w/settings/sddm/theme.conf"
+if [ -f $HOME/.config/main/settings/sddm/theme.conf ]; then
+    sddm_theme_tpl="$HOME/.config/main/settings/sddm/theme.conf"
     echo ":: Using custum theme.conf"
 fi
 

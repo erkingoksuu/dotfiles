@@ -48,9 +48,9 @@ _create_backup() {
 
 # Create Backup File Structure
 _createBackupStructure() {
-    if [ ! -d $ml4w_directory ] ;then
-        mkdir -p $ml4w_directory
-        _writeLog 1 "$ml4w_directory folder created."
+    if [ ! -d $temp_directory ] ;then
+        mkdir -p $temp_directory
+        _writeLog 1 "$temp_directory folder created."
     fi
     if [ ! -d $backup_directory ]; then
         mkdir -p $backup_directory

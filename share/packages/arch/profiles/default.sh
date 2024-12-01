@@ -30,6 +30,7 @@ packages=(
     "nwg-look"
     "qt6ct"
     "waybar" 
+    "nwg-hyprland-dock"
     "rofi-wayland"
     "polkit-gnome"
     "zsh"

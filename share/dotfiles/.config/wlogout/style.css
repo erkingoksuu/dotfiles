@@ -5,8 +5,6 @@ __      _| | ___   __ _  ___  _   _| |_
  \ V  V /| | (_) | (_| | (_) | |_| | |_  
   \_/\_/ |_|\___/ \__, |\___/ \__,_|\__| 
                   |___/                  
- 
-by Stephan Raabe (2023) 
 ----------------------------------------------------- 
 */
 
@@ -27,7 +25,7 @@ by Stephan Raabe (2023)
 }
 
 window {
-	background: url("../ml4w/cache/blurred_wallpaper.png");
+	background: url("../main/cache/blurred_wallpaper.png");
 	background-size: cover;
 	font-size: 16pt;
 	color: #cdd6f4;
@@ -86,12 +84,6 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/suspend.png"));
-}
-
-#hibernate {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/hibernate.png"));
 }
 
 #shutdown {

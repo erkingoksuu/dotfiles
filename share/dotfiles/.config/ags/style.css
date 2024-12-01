@@ -2,26 +2,25 @@
 
 * {
     all:unset;
-    font-size: 14px;
-    font-family: "Fira Sans", sans-serif;
-    font-weight: normal;
+    font-size: 16px;
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .calendar {
-    background: #222222;
-    padding: 12px;
-    margin:14px;
+    background-color: @color11;
+    color: @color0;
+    margin: 6px 1746px;
     border-radius: 12px;
-    font-weight: bold;
-    border: 3px solid @color11;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.8);
-    padding:20px;
-    min-width:320px;
+    border: 0px solid @color8;
+    padding: 12px;
+    min-width: 320px;
 }
 
 calendar:selected {
-    background-color:@color11;
-    padding:0px;
+    background-color: @color9;
+    color: @color15;
+    padding: 0px;
+    border-radius: 8px;
 }
 
 .sidebar {
@@ -41,24 +40,24 @@ calendar:selected {
     border-radius: 20px;
 }
 
-.ml4wwelcomeicon {
-    background:url("assets/ml4w-welcome.png");
+.mainwelcomeicon {
+    background:url("assets/main-welcome.png");
     background-size:50px;
     background-repeat: no-repeat;
     background-position: top;
     padding: 40px 50px 20px 50px;
 }
 
-.ml4wsettingsicon {
-    background:url("assets/ml4w-dotfiles-settings.png");
+.mainsettingsicon {
+    background:url("assets/main-dotfiles-settings.png");
     background-size:50px;
     background-repeat: no-repeat;
     background-position: top;
     padding: 40px 50px 20px 50px;
 }
 
-.ml4whyprlandicon {
-    background:url("assets/ml4w-hyprland-settings.png");
+.mainhyprlandicon {
+    background:url("assets/main-hyprland-settings.png");
     background-size:50px;
     background-repeat: no-repeat;
     background-position: top;

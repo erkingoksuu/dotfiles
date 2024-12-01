@@ -16,7 +16,7 @@ source_bin_directory="$source_directory/bin"
 source_share_directory="$source_directory/share"
 source_lib_directory="$source_directory/lib"
 
-package_name="ml4w-hyprland"
+package_name="main-hyprland"
 base_directory="/usr"
 bin_directory="$base_directory/bin"
 share_directory="$base_directory/share/$package_name"
@@ -26,11 +26,11 @@ lib_directory="$base_directory/lib/$package_name"
 if [ ! -d $bin_directory ]; then
     sudo mkdir -p $bin_directory
 fi
-if [ -f $bin_directory/ml4w-hyprland-setup ]; then
-    sudo rm $bin_directory/ml4w-hyprland-setup
+if [ -f $bin_directory/main-hyprland-setup ]; then
+    sudo rm $bin_directory/main-hyprland-setup
 fi
-sudo cp $source_bin_directory/ml4w-hyprland-setup $bin_directory
-echo ":: $source_bin_directory/ml4w-hyprland-setup installed"
+sudo cp $source_bin_directory/main-hyprland-setup $bin_directory
+echo ":: $source_bin_directory/main-hyprland-setup installed"
 
 # share
 if [ -d $share_directory ]; then
@@ -50,4 +50,4 @@ echo ":: $lib_directory installed"
 
 echo 
 
-echo ":: ML4W Dotfiles installed successfully"
+echo ":: Backup Dotfiles installed successfully"

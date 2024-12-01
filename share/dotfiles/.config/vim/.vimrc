@@ -3,8 +3,7 @@
 " |  \| |/ _ \/ _ \ \ / / | '_ ` _ \  
 " | |\  |  __/ (_) \ V /| | | | | | | 
 " |_| \_|\___|\___/ \_/ |_|_| |_| |_| 
-"                                     
-" by Stephan Raabe (2023) 
+"
 " ----------------------------------------------------- 
 
 " Add line numbers
@@ -69,4 +68,4 @@ set showmatch
 set hlsearch
 
 " Set the commands to save in history default number is 20.
-set history=1000
+set history=10000

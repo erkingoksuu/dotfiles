@@ -37,7 +37,7 @@ if [[ ! -z $missing_commands ]]; then
         echo $command
     done
     echo
-    _writeMessage "You can proceed but some features of the ML4W Dotfiles will not work."
+    _writeMessage "You can proceed but some features of the Backup Dotfiles will not work."
     _writeMessage "Please install the missing packages manually for your distribution."
     echo
     if gum confirm "Do you want to proceed?" ;then

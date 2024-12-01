@@ -1,6 +1,6 @@
 #!/bin/bash
 # Find the latest automation parameters here:
-# https://github.com/mylinuxforwork/dotfiles/wiki/Automation-of-the-installation-and-update
+# https://github.com/erkingoksuu/dotfiles/wiki/Automation-of-the-installation-and-update
 
 # -----------------------------------------------------
 # AUR HELPER
@@ -48,14 +48,14 @@ automation_hook=false
 
 # -----------------------------------------------------
 # BASH RC
-# true: Install the ML4W .bashrc
+# true: Install the Backup .bashrc
 # false: Keep existing .bashrc
 # -----------------------------------------------------
 automation_bashrc=true
 
 # -----------------------------------------------------
 # ZSH RC
-# true: Install the ML4W .zshrc
+# true: Install the Backup .zshrc
 # false: Keep existing .zshrc
 # -----------------------------------------------------
 automation_zshrc=true

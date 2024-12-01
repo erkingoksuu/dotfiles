@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # apps
-sudo cp ~/.ml4w-hyprland/dotfiles/share/apps/com.ml4w.welcome /usr/bin
-sudo cp ~/.ml4w-hyprland/dotfiles/share/apps/com.ml4w.dotfilessettings /usr/bin
-sudo cp ~/.ml4w-hyprland/dotfiles/share/apps/com.ml4w.hyprland.settings /usr/bin
+sudo cp ~/.temp-hyprland/dotfiles/share/apps/com.main.welcome /usr/bin
+sudo cp ~/.temp-hyprland/dotfiles/share/apps/com.main.dotfilessettings /usr/bin
+sudo cp ~/.temp-hyprland/dotfiles/share/apps/com.main.hyprland.settings /usr/bin
 echo ":: Apps updated"

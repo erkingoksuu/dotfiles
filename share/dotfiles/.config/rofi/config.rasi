@@ -1,18 +1,15 @@
-/*
 #  ____        __ _  
 # |  _ \ ___  / _(_) 
 # | |_) / _ \| |_| | 
 # |  _ < (_) |  _| | 
 # |_| \_\___/|_| |_| 
 #                    
-# by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
-*/
 
 /* ---- Configuration ---- */
 configuration {
     modi:                       "drun,run";
-    font:                       "Fira Sans 11";
+    font:                       "Fira Sans 12";
     show-icons:                 true;
     icon-theme:                 "kora";
     display-drun:               "APPS";
@@ -29,36 +26,36 @@ configuration {
 }
 
 /* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
+@import "~/.config/main/settings/rofi-font.rasi"
 
-/* ---- Load pywal colors (custom wal template) ---- */
+/* ---- Lo ad pywal colors (custom wal template) ---- */
 @import "~/.cache/wal/colors-rofi-pywal"
 
 /* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
+@import "~/.config/main/cache/current_wallpaper.rasi"
 
 /* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
+@import "~/.config/main/settings/rofi-border.rasi"
 
 /* ---- Window ---- */
 window {
-    width:                        900px;
+    width:                        400px;
     x-offset:                     0px;
     y-offset:                     0px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
-    color:                        #FFFFFF;
-    border:                       @border-width;
-    border-color:                 #FFFFFF;
+    color:                        #fff;
+    border:                       0;
+    border-color:                 #fff;
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
     anchor:                       center;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                10px;
-    background-color:             transparent;
+    border-radius:                22px;
+    background-color:             @color11;
 }
 
 /* ---- Mainbox ---- */
@@ -67,17 +64,16 @@ mainbox {
     orientation:                  horizontal;
     spacing:                      0px;
     margin:                       0px;
+    border-radius:                12px;
     background-color:             @background;
-    background-image:             @current-image;
-    children:                     ["imagebox","listbox"];
+    children:                     ["imagebox"];
 }
 
 /* ---- Imagebox ---- */
 imagebox {
     padding:                      18px;
-    background-color:             transparent;
     orientation:                  vertical;
-    children:                     [ "inputbar", "dummy", "mode-switcher" ];
+    children:                     [ "inputbar", "listbox", "mode-switcher" ];
 }
 
 /* ---- Listbox ---- */
@@ -98,8 +94,8 @@ inputbar {
     enabled:                      true;
     text-color:                   @foreground;
     spacing:                      10px;
-    padding:                      15px;
-    border-radius:                10px;
+    padding:                      15px 0;
+    border-radius:                12px;
     border-color:                 @foreground;
     background-color:             @background;
     children:                     [ "textbox-prompt-colon", "entry" ];
@@ -108,8 +104,8 @@ inputbar {
 textbox-prompt-colon {
     enabled:                      true;
     expand:                       false;
-    str:                          "";
-    padding:                      0px 5px 0px 0px;
+    str:                          "";
+    padding:                      0;
     background-color:             transparent;
     text-color:                   inherit;
 }
@@ -133,7 +129,7 @@ mode-switcher{
 
 button {
     padding:                      10px;
-    border-radius:                10px;
+    border-radius:                12px;
     background-color:             @background;
     text-color:                   inherit;
     cursor:                       pointer;
@@ -149,9 +145,9 @@ button selected {
 listview {
     enabled:                      true;
     columns:                      1;
-    lines:                        8;
-    cycle:                        false;
-    dynamic:                      false;
+    lines:                        3;
+    cycle:                        true;
+    dynamic:                      true;
     scrollbar:                    false;
     layout:                       vertical;
     reverse:                      false;
@@ -159,9 +155,10 @@ listview {
     fixed-columns:                true;
     spacing:                      0px;
     padding:                      10px;
-    margin:                       0px;
+    margin:                       5px 0;
     background-color:             @background;
-    border:0px;
+    border:                       0px;
+    border-radius:                12px;
 }
 
 /* ---- Element ---- */
@@ -171,12 +168,12 @@ element {
     margin:                       5px;
     cursor:                       pointer;
     background-color:             @background;
-    border-radius:                10px;
-    border:                       @border-width;
+    border-radius:                12px;
+    border:                       0;
 }
 
 element normal.normal {
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 
@@ -206,7 +203,7 @@ element selected.active {
 }
 
 element alternate.normal {
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 

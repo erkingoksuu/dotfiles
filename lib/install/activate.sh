@@ -76,7 +76,7 @@ _activate_dotfiles_folder() {
     done
     
     # Write dot folder into settings
-    echo "$dot_folder" > $HOME/$dot_folder/.config/ml4w/settings/dotfiles-folder.sh
+    echo "$dot_folder" > $HOME/$dot_folder/.config/main/settings/dotfiles-folder.sh
 
     stow --dir="$HOME/$dot_folder" --target="$HOME" .
     echo
@@ -107,8 +107,8 @@ _define_dotfiles_folder() {
     dot_folder=${dot_folder_tmp//[[:blank:]]/}
     if [ $dot_folder == "cancel" ] ;then
         exit
-    elif [ $dot_folder == ".ml4w-hyprland" ] ;then
-        echo ":: The folder .ml4w-hyprland is not allowed."
+    elif [ $dot_folder == ".temp-hyprland" ] ;then
+        echo ":: The folder .temp-hyprland is not allowed."
         _define_dotfiles_folder
     else
         _confirm_dotfiles_folder
@@ -116,8 +116,8 @@ _define_dotfiles_folder() {
 }
 
 _confirm_dotfiles_folder() {
-    if [ -d ~/$dot_folder ] && [ -d ~/$dot_folder/.config/ml4w ] ;then
-        echo ":: ML4W Dotfiles folder ~/$dot_folder selected."
+    if [ -d ~/$dot_folder ] && [ -d ~/$dot_folder/.config/main ] ;then
+        echo ":: Backup Dotfiles folder ~/$dot_folder selected."
         echo
         if gum confirm "Do you want to activate now?" ;then
             _activate_dotfiles_folder
@@ -126,7 +126,7 @@ _confirm_dotfiles_folder() {
             exit
         fi
     else
-        echo "ERROR: The folder doesn't exits or isn't a compatible ML4W Dotfiles installation."
+        echo "ERROR: The folder doesn't exits or isn't a compatible Backup Dotfiles installation."
         echo "Please update the folder name!"
         echo
         _define_dotfiles_folder
@@ -134,7 +134,7 @@ _confirm_dotfiles_folder() {
 }
 
 figlet -f smslant "Activate"
-echo ":: You can activate an exiting ML4W Dotfiles installation."
+echo ":: You can activate an exiting Backup Dotfiles installation."
 echo
 echo ":: Please enter the name of the installation folder starting from your home directory."
 echo ":: (e.g., dotfiles or Documents/mydotfiles, ...)"

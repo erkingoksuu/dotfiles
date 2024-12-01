@@ -1,18 +1,15 @@
-/*
 #  ____        __ _  
 # |  _ \ ___  / _(_) 
 # | |_) / _ \| |_| | 
 # |  _ < (_) |  _| | 
 # |_| \_\___/|_| |_| 
-#                    
-# by Stephan Raabe (2023) 
+#
 # ----------------------------------------------------- 
-*/
 
 /* ---- Configuration ---- */
 configuration {
     modi:                       "drun,run";
-    font:                       "Fira Sans 11";
+    font:                       "Fira Sans 12";
     show-icons:                 false;
     icon-theme:                 "kora";
     display-drun:               "APPS";
@@ -29,35 +26,36 @@ configuration {
 }
 
 /* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
+@import "~/.config/main/settings/rofi-font.rasi"
 
 /* ---- Load pywal colors (custom wal template) ---- */
 @import "~/.cache/wal/colors-rofi-pywal"
 
 /* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
+@import "~/.config/main/cache/current_wallpaper.rasi"
 
 /* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
+@import "~/.config/main/settings/rofi-border.rasi"
 
 /* ---- Window ---- */
+
 window {
-    width:                        600px;
-    x-offset:                     0px;
-    y-offset:                     65px;
+    width:                        400px;
+    x-offset:                     14px;
+    y-offset:                     10px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
-    color:                        #FFFFFF;
-    border:                       @border-width;
+    color:                        #000;
+    border:                       0;
     border-color:                 #FFFFFF;
     cursor:                       "default";
     transparency:                 "real";
-    location:                     north;
+    location:                     northwest;
     anchor:                       north;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                10px;
+    border-radius:                22px;
     background-color:             transparent;
 }
 
@@ -67,8 +65,7 @@ mainbox {
     orientation:                  horizontal;
     spacing:                      0px;
     margin:                       0px;
-    background-color:             @background;
-    background-image:             @current-image;
+    background-color:             rgba(255, 255, 255, 0.8);
     children:                     ["listbox"];
 }
 
@@ -77,15 +74,15 @@ imagebox {
     padding:                      18px;
     background-color:             transparent;
     orientation:                  vertical;
-    children:                     [ "inputbar", "dummy", "mode-switcher" ];
+    children:                     [ "inputbar", "mode-switcher" ];
 }
 
 /* ---- Listbox ---- */
 listbox {
-    spacing:                     20px;
+    spacing:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /* ---- Dummy ---- */
@@ -96,20 +93,21 @@ dummy {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                      true;
-    text-color:                   @foreground;
+    text-color:                   @background;
     spacing:                      10px;
-    padding:                      15px;
-    border-radius:                0px;
-    border-color:                 @foreground;
-    background-color:             @background;
+    padding:                      15px 0;
+    border-radius:                12px;
+    margin:                       10px;
+    border-color:                 @background;
+    background-color:             @foreground;
     children:                     [ "textbox-prompt-colon", "entry" ];
 }
 
 textbox-prompt-colon {
     enabled:                      true;
     expand:                       false;
-    padding:                      0px 5px 0px 0px;
-    str:                          "";
+    padding:                      0;
+    str:                          "";
     background-color:             transparent;
     text-color:                   inherit;
 }
@@ -133,7 +131,7 @@ mode-switcher{
 
 button {
     padding:                      10px;
-    border-radius:                10px;
+    border-radius:                12px;
     background-color:             @background;
     text-color:                   inherit;
     cursor:                       pointer;
@@ -149,7 +147,7 @@ button selected {
 listview {
     enabled:                      true;
     columns:                      1;
-    lines:                        8;
+    lines:                        3;
     cycle:                        false;
     dynamic:                      false;
     scrollbar:                    false;
@@ -159,9 +157,10 @@ listview {
     fixed-columns:                true;
     spacing:                      0px;
     padding:                      10px;
-    margin:                       0px;
-    background-color:             @background;
-    border:0px;
+    margin:                       0 10px 10px 10px;
+    background-color:             @foreground;
+    border:                       0px;
+    border-radius:                12px;
 }
 
 /* ---- Element ---- */
@@ -172,52 +171,52 @@ element {
     cursor:                       pointer;
     background-color:             @background;
     border-radius:                10px;
-    border:                       @border-width;
+    border:                       0;
 }
 
 element normal.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
+    background-color:            transparent;
+    text-color:                  @background;
 }
 
 element normal.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element normal.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element selected.normal {
     background-color:            @color11;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element selected.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element selected.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element alternate.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
+    background-color:            transparent;
+    text-color:                  @background;
 }
 
 element alternate.urgent {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element alternate.active {
     background-color:            inherit;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 
 element-icon {
@@ -249,8 +248,8 @@ textbox {
     padding:                     15px;
     margin:                      0px;
     border-radius:               0px;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @foreground;
+    text-color:                  @background;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
@@ -258,6 +257,6 @@ textbox {
 error-message {
     padding:                     15px;
     border-radius:               20px;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @foreground;
+    text-color:                  @background;
 }

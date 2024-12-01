@@ -1,4 +1,4 @@
-# Packages required for the installer
+# Packages required for installer
 packages=(
     "wget"
     "zip"

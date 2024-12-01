@@ -8,9 +8,9 @@ if [ -d ~/$dot_folder/.config ]; then
             if [ -d  ~/$dot_folder/.config/$f ] ;then
                 _writeLog 0 "Checking for directory ~/.config/$f"
                 if [ -f $HOME/.config/$f/PROTECTED ]; then
-                    if [ -d $ml4w_directory/$version/.config/$f ]; then
+                    if [ -d $temp_directory/$version/.config/$f ]; then
                         _writeLog 0 "Folder ~/.config/$f is protected"
-                        rm -rf $ml4w_directory/$version/.config/$f/
+                        rm -rf $temp_directory/$version/.config/$f/
                     fi
                 fi
             fi

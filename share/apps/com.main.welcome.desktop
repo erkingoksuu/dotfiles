@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Main Welcome App
+Exec=com.main.welcome
+Icon=com.main.welcome
+Terminal=false
+Categories=Utility

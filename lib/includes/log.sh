@@ -76,7 +76,7 @@ log_date=$(_logDateTime)
 # Debug
 # rm -rf $log_folder
 
-# Create ml4w log directory
+# Create temp log directory
 if [ ! -d $log_folder ]; then
     mkdir -p $log_folder
 fi

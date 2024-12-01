@@ -36,7 +36,7 @@ elif [[ $shell == "zsh" ]] ;then
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         _writeMessage "Installing oh-my-zsh"
         sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        cp ~/.config/ml4w/tpl/.zshrc ~/
+        cp ~/.config/main/tpl/.zshrc ~/
     else
         _writeMessage "oh-my-zsh already installed"
     fi

@@ -4,4 +4,3 @@ packages=(
     "qt5-quickcontrols2" 
     "qt5-svg"
 )
-

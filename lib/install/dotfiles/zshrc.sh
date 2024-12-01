@@ -18,7 +18,7 @@ _zsh_automation() {
     if [[ "$automation_zshrc" = true ]] ;then
         echo ":: AUTOMATION: .zshrc will be installed."
     elif [[ "$automation_zshrc" = false ]] ;then
-        rm $ml4w_directory/$version/.zshrc
+        rm $temp_directory/$version/.zshrc
         _writeSkipped
     else
         echo ":: AUTOMATION ERROR: zshrc"
@@ -30,7 +30,7 @@ if [ -f ~/.zshrc ] ;then
     if ! test -L ~/.zshrc ;then
         _writeHeader ".zshrc"
         echo ":: The script has detected an existing .zshrc file."
-        echo ":: You can replace it with the latest version of ML4W Dotfiles $version (Recommended)."
+        echo ":: You can replace it with the latest version of Backup Dotfiles $version (Recommended)."
         echo
         if [ -z $automation_zshrc ] ;then
             _zshrc_confirm

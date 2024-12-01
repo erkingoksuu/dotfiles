@@ -39,7 +39,6 @@ _commandExists "ags" "ags"
 _commandExists "magick" "imagemagick"
 _commandExists "figlet" "figlet"
 _commandExists "waypaper" "waypaper"
-
 echo
 echo "Press return to exit"
 read

@@ -4,9 +4,7 @@
 # | |   | | '_ \| '__/ _` | '__| | | | 
 # | |___| | |_) | | | (_| | |  | |_| | 
 # |_____|_|_.__/|_|  \__,_|_|   \__, | 
-#                               |___/  
-#  
-# by Stephan Raabe (2024) 
+#                               |___/   
 # ----------------------------------------------------- 
 
 # ------------------------------------------------------
@@ -53,24 +51,17 @@ _isInstalled() {
 # Function Install all package if not installed
 # ------------------------------------------------------
 _installPackage() {
-
     # Check if package is already installed
     if [[ $(_isInstalled "$1") == 0 ]]; then
-
         _writeLogTerminal 0 "$1 is already installed."
     else
-
         if [ -f "$packages_directory/$install_platform/special/$1" ]; then
-
             _writeLogTerminal 0 "Installing $1 with custom script..."
-
             # Source custom installation script for package
             source $packages_directory/$install_platform/special/$1
         else
-
             # Check if installation script exist and not empty
             _writeLogTerminal 0 "Installing $1..."
-
             # Run installation with platform command
             case $install_platform in
                 arch)
@@ -84,7 +75,6 @@ _installPackage() {
                     exit
                 ;;
             esac    
-
             # Check that installation was successful
             if [[ $(_isInstalled "$1") == 0 ]]; then
                 _writeLogTerminal 1 "$1 installed successfully."
@@ -231,21 +221,17 @@ _isKVM() {
 
 # _replaceInFile $startMarker $endMarker $customtext $targetFile
 _replaceInFile() {
-
     # Set function parameters
     start_string=$1
     end_string=$2
     new_string="$3"
     file_path="$4"
-
     # Counters
     start_line_counter=0
     end_line_counter=0
     start_found=0
     end_found=0
-
     if [ -f $file_path ] ;then
-
         # Detect Start String
         while read -r line
         do
@@ -256,7 +242,6 @@ _replaceInFile() {
                 break
             fi 
         done < "$file_path"
-
         # Detect End String
         while read -r line
         do
@@ -267,7 +252,6 @@ _replaceInFile() {
                 break
             fi 
         done < "$file_path"
-
         # Check that deliminters exists
         if [[ "$start_found" == "0" ]] ;then
             echo "ERROR: Start deliminter not found."
@@ -277,12 +261,10 @@ _replaceInFile() {
             echo "ERROR: End deliminter not found."
             sleep 2
         fi
-
         # Replace text between delimiters
         if [[ ! "$start_found" == "0" ]] && [[ ! "$end_found" == "0" ]] && [ "$start_found" -le "$end_found" ] ;then
             # Remove the old line
             ((start_found++))
-
             if [ ! "$start_found" == "$end_found" ] ;then    
                 ((end_found--))
                 sed -i "$start_found,$end_found d" $file_path
@@ -304,23 +286,19 @@ _replaceTextInFile() {
     # Set function parameters
     customtext="$1"
     targetFile=$2
-
     echo $customtext > $targetFile
 }
 
 # replaceLineInFile $findText $customtext $targetFile
 _replaceLineInFile() {
-   # Set function parameters
+    # Set function parameters
     find_string="$1"
     new_string="$2"
     file_path=$3
-
     # Counters
     find_line_counter=0
     line_found=0
-
     if [ -f $file_path ] ;then
-
         # Detect Line
         while read -r line
         do
@@ -331,20 +309,15 @@ _replaceLineInFile() {
                 break
             fi 
         done < "$file_path"
-
         if [[ ! "$line_found" == "0" ]] ;then
-            
             #Remove the line
             sed -i "$line_found d" $file_path
-
             # Add the new line
             sed -i "$line_found i $new_string" $file_path            
-
         else
             echo "ERROR: Target line not found for $find_string."
             sleep 2
         fi   
-
     else
         echo "ERROR: Target file not found for $find_string."
         sleep 2
@@ -353,20 +326,17 @@ _replaceLineInFile() {
 
 # replaceLineInFileCheckpoint $findText $customtext $checkpoint $targetFile
 _replaceLineInFileCheckpoint() {
-   # Set function parameters
+    # Set function parameters
     find_string="$1"
     new_string="$2"
     checkpoint="$3"
     file_path=$4
-
     # Counters
     find_checkpoint_counter=0
     find_line_counter=0
     line_found=0
     checkpoint_found=0
-
     if [ -f $file_path ] ;then
-
         # Detect Checkpoint
         while read -r line
         do
@@ -377,9 +347,7 @@ _replaceLineInFileCheckpoint() {
                 break
             fi 
         done < "$file_path"
-
         if [[ ! "$checkpoint_found" == "0" ]] ;then
-
             # Detect Line
             while read -r line
             do
@@ -392,15 +360,12 @@ _replaceLineInFileCheckpoint() {
                     fi 
                 fi
             done < "$file_path"
-
             if [[ ! "$line_found" == "0" ]] ;then
                 
                 #Remove the line
                 sed -i "$line_found d" $file_path
-
                 # Add the new line
                 sed -i "$line_found i $new_string" $file_path            
-
             else
                 echo "ERROR: Target line not found for $find_string."
                 sleep 2
@@ -408,7 +373,6 @@ _replaceLineInFileCheckpoint() {
         else 
             echo "ERROR: Checkpoint not found."
         fi  
-
     else
         echo "ERROR: Target file not found for $find_string."
         sleep 2

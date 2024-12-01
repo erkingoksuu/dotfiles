@@ -20,7 +20,7 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 5
+            "*": 1
     }
   },
 
@@ -53,14 +53,6 @@
     "separate-outputs": true
   },
 
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
-    "on-click-right": "sleep 0.1 && com.ml4w.welcome",
-    "format": " ",
-    "tooltip-format": "Open Sidebar"
-  },
-
   // Empty
   "custom/empty": {
     "format": ""
@@ -75,9 +67,9 @@
   // Cliphist
   "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.config/main/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/main/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/main/scripts/cliphist.sh w",
     "tooltip-format": "Clipboard Manager"
   },
 
@@ -86,10 +78,10 @@
     "format": "  {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "exec": "~/.config/main/scripts/updates.sh",
     "interval": 1800,
-    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
-    "on-click-right": "~/.config/ml4w/settings/software.sh"
+    "on-click": "$(cat ~/.config/main/settings/terminal.sh) --class dotfiles-floating -e ~/.config/main/scripts/installupdates.sh",
+    "on-click-right": "~/.config/main/settings/software.sh"
   },
 
   // Wallpaper
@@ -107,13 +99,6 @@
     "tooltip-format": "Select a waybar theme"
   },
 
-  // Settings
-  "custom/settings": {
-    "format": "",
-    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
-    "tooltip-format": "ML4W Dotfiles Settings"
-  },
-
   // Keybindings
   "custom/keybindings": {
     "format": "",
@@ -124,7 +109,7 @@
   // ChatGPT Launcher
   "custom/chatgpt": {
     "format": " ",
-    "on-click": "~/.config/ml4w/settings/ai.sh",
+    "on-click": "~/.config/main/settings/ai.sh",
     "tooltip-format": "AI Support"
   },
 
@@ -138,7 +123,7 @@
   // Windows VM
   "custom/windowsvm": {
     "format": "",
-    "on-click": "~/.config/ml4w/scripts/launchvm.sh",
+    "on-click": "~/.config/main/scripts/launchvm.sh",
     "tooltip": false
   },
 
@@ -163,7 +148,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click": "~/.config/main/scripts/wlogout.sh",
     "tooltip-format": "Power Menu"
   },
 
@@ -200,13 +185,13 @@
 
   // System tray
   "tray": {
-    "icon-size": 21,
+    "icon-size": 24,
     "spacing": 10
   },
 
   // Clock
   "clock": {
-    "format": "{:%H:%M %a}",
+        "format": "{:%H:%M - %a}",
     "on-click": "ags toggle calendar",
     "tooltip": false
   },
@@ -220,13 +205,13 @@
   // CPU
   "cpu": {
     "format": "/ C {usage}% ",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/main/settings/system-monitor.sh"
   },
 
   // Memory
   "memory": {
     "format": "/ M {}% ",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/main/settings/system-monitor.sh"
   },
 
   // Harddisc space used
@@ -234,7 +219,7 @@
     "interval": 30,
     "format": "D {percentage_used}% ",
     "path": "/",
-    "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+    "on-click": "~/.config/main/settings/system-monitor.sh"
   },
 
   "hyprland/language": {
@@ -263,7 +248,7 @@
     "modules": [
       "custom/tools",
       "custom/cliphist",
-      "custom/hypridle",
+//      "custom/hypridle",
       "custom/hyprshade"
     ]
   },
@@ -303,8 +288,8 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
+    "on-click": "~/.config/main/settings/networkmanager.sh",
+    "on-click-right": "~/.config/main/scripts/nm-applet.sh toggle",
   },
 
   // Battery
@@ -351,6 +336,7 @@
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager",
+    "on-click-right": "~/.config/main/scripts/blueman-tray.sh toggle",
     "format-no-controller": ""
   },
 

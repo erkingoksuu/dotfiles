@@ -3,13 +3,13 @@
 # ------------------------------------------------------
 _writeLogHeader "Hook"
 
-if [ -f $ml4w_directory/hook.sh ]; then
+if [ -f $temp_directory/hook.sh ]; then
     _writeHeader "Hook Script"
     echo ":: The script has detected a hook.sh script."
     echo
     if [ -z $automation_hook ] ;then
         if gum confirm "Do you want to run the script now?"; then
-            cd $ml4w_directory
+            cd $temp_directory
             ./hook.sh
             cd $base_directory
             echo ":: hook.sh executed!"
@@ -21,7 +21,7 @@ if [ -f $ml4w_directory/hook.sh ]; then
         fi
     else
         if [[ "$automation_hook" = true ]] ;then
-            cd $ml4w_directory
+            cd $temp_directory
             ./hook.sh
             cd $base_directory
             echo ":: AUTOMATION: hook.sh executed!"

@@ -6,7 +6,7 @@ source library/scripts.sh
 # ------------------------------------------------------
 
 # Show Current version
-echo ":: Running hook for ML4W Dotfiles $version"
+echo ":: Running hook for Backup Dotfiles $version"
 
 # If you made adjustments on files on the ~/dotfiles folder 
 # you can protect the files and folders from being overwritten by updates.

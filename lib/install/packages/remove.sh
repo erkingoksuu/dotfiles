@@ -23,7 +23,7 @@ fi
 _writeLog 0 "Checking for swayidle"
 if [[ $(_isInstalled "swayidle") == 0 ]]; then
     _removePackage "swayidle"
-   _writeLog 1 "swayidle removed"
+    _writeLog 1 "swayidle removed"
     echo
 fi
 

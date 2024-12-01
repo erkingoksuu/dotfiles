@@ -6,4 +6,3 @@ packages=(
     "qt5-qtsvg"
     "qt6-qt5compat"
 )
-

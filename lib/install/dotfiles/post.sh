@@ -3,13 +3,13 @@
 # ------------------------------------------------------
 _writeLogHeader "Post Script"
 
-if [ -f $ml4w_directory/post.sh ]; then
+if [ -f $temp_directory/post.sh ]; then
     _writeHeader "Post Script"
     echo ":: The script has detected a post.sh script."
     echo
     if [ -z $automation_post ] ;then
         if gum confirm "Do you want to run the script now?"; then
-            cd $ml4w_directory
+            cd $temp_directory
             ./post.sh
             cd $base_directory
             echo ":: post.sh executed!"
@@ -21,7 +21,7 @@ if [ -f $ml4w_directory/post.sh ]; then
         fi
     else
         if [[ "$automation_post" = true ]] ;then
-            cd $ml4w_directory
+            cd $temp_directory
             ./post.sh
             cd $base_directory
             echo ":: AUTOMATION: post.sh executed!"
