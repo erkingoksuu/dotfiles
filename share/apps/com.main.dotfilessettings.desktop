@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Main Settings App
-Exec=com.main.dotfilessettings
-Icon=com.main.dotfilessettings
-Terminal=false
-Categories=Utility

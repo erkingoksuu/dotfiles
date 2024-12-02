@@ -17,20 +17,8 @@ bin_directory="$base_directory/bin"
 share_directory="$base_directory/share"
 lib_directory="$base_directory/lib"
 
-install_directory="$lib_directory/install"
-includes_directory="$lib_directory/includes"
-options_directory="$lib_directory/options"
-diagnosis_directory="$lib_directory/diagnosis"
 dotfiles_directory="$share_directory/dotfiles"
-apps_directory="$share_directory/apps"
-template_directory="$share_directory/templates"
-wallpaper_directory="$share_directory/wallpapers"
 packages_directory="$share_directory/packages"
-
-temp_directory="$HOME/.temp-hyprland"
-backup_directory="$temp_directory/backup"
-archive_directory="$temp_directory/archive"
-log_folder="$temp_directory/log"
 
 # ----------------------------------------------------- 
 # Define script parameters
@@ -47,37 +35,6 @@ install_mode="full"
 version="$(cat $dotfiles_directory/.config/main/version/name)"
 
 # ----------------------------------------------------- 
-# Colors
-# ----------------------------------------------------- 
-source $includes_directory/colors.sh
-
-# ----------------------------------------------------- 
-# Library
-# ----------------------------------------------------- 
-source $includes_directory/library.sh
-
-# ----------------------------------------------------- 
-# Legacy
-# ----------------------------------------------------- 
-source $includes_directory/legacy.sh
-
-# ----------------------------------------------------- 
-# Log File
-# ----------------------------------------------------- 
-source $includes_directory/log.sh
-
-# ----------------------------------------------------- 
-# Check for update
-# ----------------------------------------------------- 
-_check_update() {
-    if [ -f ~/.config/main/settings/dotfiles-folder.sh ] ;then
-        echo "true"
-    else
-        echo "false"
-    fi
-}
-
-# ----------------------------------------------------- 
 # Run full installation
 # ----------------------------------------------------- 
 _run_fullinstall() {
@@ -87,72 +44,11 @@ _run_fullinstall() {
 }
 
 # ----------------------------------------------------- 
-# Run packages installation
-# ----------------------------------------------------- 
-_run_packages() {
-    source $install_directory/header.sh
-    source $install_directory/packages.sh
-}
-
-# ----------------------------------------------------- 
-# Run full installation with NVIDIA drivers
-# ----------------------------------------------------- 
-_run_nvidia() {
-    source $install_directory/header.sh
-    echo ":: With NVIDIA driver installation"
-    source $install_directory/packages.sh
-    source $install_directory/nvidia.sh
-    source $install_directory/dotfiles.sh
-}
-
-# ----------------------------------------------------- 
 # Run dotfiles installation
 # ----------------------------------------------------- 
 _run_dotfiles() {
     source $install_directory/header.sh
     source $install_directory/dotfiles.sh
-}
-
-# ----------------------------------------------------- 
-# Run installer
-# ----------------------------------------------------- 
-_run_install() {
-    source $install_directory/install.sh
-}
-
-# ----------------------------------------------------- 
-# Run uninstaller
-# ----------------------------------------------------- 
-_run_uninstall() {
-    source $install_directory/uninstall.sh
-}
-
-# ----------------------------------------------------- 
-# Install package options
-# ----------------------------------------------------- 
-_run_options() {
-    source $options_directory/options.sh
-}
-
-# ----------------------------------------------------- 
-# Run diagnosis
-# ----------------------------------------------------- 
-_run_diagnosis() {
-    source $diagnosis_directory/diagnosis.sh
-}
-
-# ----------------------------------------------------- 
-# Run update
-# ----------------------------------------------------- 
-_run_update() {
-    source $install_directory/update.sh
-}
-
-# ----------------------------------------------------- 
-# Activate existing dotfiles installation
-# ----------------------------------------------------- 
-_run_activate() {
-    source $install_directory/activate.sh
 }
 
 # ----------------------------------------------------- 
@@ -170,15 +66,7 @@ while getopts "m:p:vh" opt; do
         h) 
             echo ":: Backup Dotfiles for Hyprland Version $version"
             echo "-m full: Run full installation"
-            echo "-m packages: Run installation of packages only"
-            echo "-m nvidia: Run full installation with NVIDA Driver installation"
             echo "-m dotfiles: Run the setup of the dotfiles only"
-            echo "-m install: Will install the package into the target directories"
-            echo "-m uninstall: Will uninstall the dotfiles"
-            echo "-m options: Install package options"
-            echo "-m diagnosis: Run diagnosis"
-            echo "-m update: Check for new updates"
-            echo "-m activate: Activate another existing dotfiles folder"
             echo "-p arch: Installation for Arch based platforms"
             echo "-p fedora: Installation for Fedora based platforms"
             echo "-v: Current version of the Backup Dotfiles for Hyprland"
@@ -191,31 +79,7 @@ case $install_mode in
     full)
         _run_fullinstall
     ;;
-    packages)
-        _run_packages
-    ;;
-    nvidia)
-        _run_nvidia
-    ;;
     dotfiles)
         _run_dotfiles
-    ;;
-    install)
-        _run_install
-    ;;
-    uninstall)
-        _run_uninstall
-    ;;
-    options)
-        _run_options
-    ;;
-    diagnosis)
-        _run_diagnosis
-    ;;
-    update)
-        _run_update
-    ;;
-    activate)
-        _run_activate
     ;;
 esac

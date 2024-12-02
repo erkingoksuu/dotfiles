@@ -54,21 +54,6 @@ else
     _writeLog 1 "bluetooth.service activated successfully."    
 fi
 
-if [ -d ~/$dot_folder/hypr/settings/ ] ;then
-    rm -rf ~/dotfiles/hypr/settings
-    _writeLog 1 "~/dotfiles/hypr/settings removed."
-fi
-
-if [ -f ~/.local/share/applications/main-welcome.desktop ] ;then
-    rm ~/.local/share/applications/main-welcome.desktop
-fi
-if [ -f ~/.local/share/applications/main-dotfiles-settings.desktop ] ;then
-    rm ~/.local/share/applications/main-dotfiles-settings.desktop
-fi
-if [ -f ~/.local/share/applications/main-hyprland-settings.desktop ] ;then
-    rm ~/.local/share/applications/main-hyprland-settings.desktop
-fi
-
 # Create default folder structure
 xdg-user-dirs-update
 _writeLog 1 "Clean up done"

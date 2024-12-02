@@ -1,7 +1,9 @@
 # ----------------------------------------------------- 
 # Select Platform
 # ----------------------------------------------------- 
-source $install_directory/packages/platform.sh
+if [ -z $install_platform ]; then
+    source $install_directory/packages/platform.sh
+fi
 
 # ----------------------------------------------------- 
 # Before start
@@ -14,19 +16,9 @@ source $install_directory/packages/required.sh
 source $install_directory/packages/confirm_start.sh
 
 # ----------------------------------------------------- 
-# Load automation variables
-# ----------------------------------------------------- 
-source $install_directory/packages/automation.sh
-
-# ----------------------------------------------------- 
 # Install AUR Helper
 # ----------------------------------------------------- 
 source $install_directory/packages/aur.sh
-
-# ----------------------------------------------------- 
-# Remove not required packages
-# ----------------------------------------------------- 
-source $install_directory/packages/remove.sh
 
 # ----------------------------------------------------- 
 # Install packages

@@ -17,7 +17,7 @@ echo
 # ------------------------------------------------------
 
 if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" ;then
-    echo 
+    echo
     echo ":: Update started."
 elif [ $? -eq 130 ]; then
         exit 130
@@ -43,25 +43,6 @@ case $install_platform in
             return; #false
         }
 
-        if [[ $(_isInstalledAUR "timeshift") == "0" ]] ;then
-            echo
-            if gum confirm "DO YOU WANT TO CREATE A SNAPSHOT?" ;then
-                echo
-                c=$(gum input --placeholder "Enter a comment for the snapshot...")
-                sudo timeshift --create --comments "$c"
-                sudo timeshift --list
-                sudo grub-mkconfig -o /boot/grub/grub.cfg
-                echo ":: DONE. Snapshot $c created!"
-                echo
-            elif [ $? -eq 130 ]; then
-                echo ":: Snapshot skipped."
-                exit 130
-            else
-                echo ":: Snapshot skipped."
-            fi
-            echo
-        fi
-
         $aur_helper
 
         if [[ $(_isInstalledAUR "flatpak") == "0" ]] ;then
@@ -79,9 +60,9 @@ case $install_platform in
 esac
 
 notify-send "Update complete"
-echo 
+echo
 echo ":: Update complete"
-echo 
+echo
 source ~/.config/main/scripts/updates.sh
 echo
 echo "Press [ENTER] to close."

@@ -1,5 +1,5 @@
 import { GObject } from "astal";
-import { astalify, ConstructProps, App, Astal, Gdk, Gtk } from "astal/gtk3"
+import { astalify, ConstructProps, App, Astal, Gtk } from "astal/gtk3"
 
 class CalendarGtk extends astalify(Gtk.Calendar) {
 	static {

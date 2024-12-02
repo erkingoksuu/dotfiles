@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Main Hyprland App
-Exec=com.main.hyprland.settings
-Icon=com.main.hyprland.settings
-Terminal=false
-Categories=Utility
