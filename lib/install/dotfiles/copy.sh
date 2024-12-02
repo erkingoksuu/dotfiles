@@ -6,8 +6,7 @@ _writeLogHeader "Copy"
 _copy_confirm() {
     if gum confirm "Do you want to install the prepared Backup Dotfiles now?" ;then
         _writeLog 1 "Copy started"
-        cp -rf $HOME/Downloads/dotfiles/share/dotfiles/.config/ $HOME/.config/ 
-        chmod +rwx $HOME/.config/
+        rsync -avhp -I $HOME/Downloads/dotfiles/share/dotfiles/.config/ $HOME/.config/
     elif [ $? -eq 130 ]; then
         _writeCancel
         exit 130
