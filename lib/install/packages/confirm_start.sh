@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # Confirm Start
 # ------------------------------------------------------
-_writeLogHeader "Confirm installation"
+echo "Confirm installation"
 
 if gum confirm "DO YOU WANT TO INSTALL THE REQUIRED PACKAGES FOR Backup Dotfiles?" ;then
     echo "Installation started"

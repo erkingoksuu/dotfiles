@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # Select platform
 # ------------------------------------------------------
-_writeLogHeader "Platform"
+echo "Platform"
 
 # Select the platform if not defined with parameter
 if [ -z $install_platform ]; then

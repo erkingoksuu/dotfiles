@@ -1,8 +1,8 @@
 # ------------------------------------------------------
 # Header
 # ------------------------------------------------------
-_writeLogHeader "Installation"
-_writeLog 0 "Installation started"
+echo "Installation"
+echo "Installation started"
 
 clear
 echo -e "${GREEN}"
@@ -18,10 +18,5 @@ echo -e "${NONE}"
 echo "Version: $version"
 echo "Platform: $install_platform" 
 echo
-if [[ $(_check_update) == "true" ]] ;then
-    _writeLog 0 "An existing Backup Dotfiles installation detected."
-    echo "This script will guide you through the update process of the Backup Dotfiles."
-else
-    _writeLog 0 "Initial installation of Backup Dotfiles started."
-    echo "This script will guide you through the installation process of the Backup dotfiles."
-fi
+echo "Initial installation of Backup Dotfiles started."
+echo "This script will guide you through the installation process of the Backup dotfiles."

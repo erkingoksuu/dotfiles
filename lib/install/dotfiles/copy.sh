@@ -1,11 +1,11 @@
 # ------------------------------------------------------
 # Copy dotfiles
 # ------------------------------------------------------
-_writeLogHeader "Copy"
+echo "Copy"
 
 _copy_confirm() {
     if gum confirm "Do you want to install the prepared Backup Dotfiles now?" ;then
-        _writeLog 1 "Copy started"
+        echo "Copy started"
         # Kaynak ve hedef dizinleri
         src_dir="$HOME/Downloads/dotfiles/share/dotfiles/.config/"
         dest_dir="$HOME/.config/"
@@ -39,6 +39,6 @@ _copy_confirm() {
     fi
 }
 
-_writeHeader "Copy"
+echo "Copy"
 
 _copy_confirm

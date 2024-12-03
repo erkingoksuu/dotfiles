@@ -1,8 +1,8 @@
 # ------------------------------------------------------
 # Install packages
 # ------------------------------------------------------
-_writeLogHeader "Packages"
-_writeHeader "Packages"
+echo "Packages"
+echo "Packages"
 
 # Hyprland
 source $packages_directory/$install_platform/hyprland.sh

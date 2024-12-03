@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # Required packages
 # ------------------------------------------------------
-_writeLogHeader "Required packages"
+echo "Required packages"
 
 # Required packages for the installer
 source $packages_directory/$install_platform/installer.sh

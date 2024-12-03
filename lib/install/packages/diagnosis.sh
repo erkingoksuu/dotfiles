@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # Diagnosis
 # ------------------------------------------------------
-_writeLogHeader "Diagnosis"
+echo "Diagnosis"
 
 commands=(
     "dunst"
@@ -31,7 +31,7 @@ _run_diagnosis(){
 _run_diagnosis
 
 if [[ ! -z $missing_commands ]]; then
-    _writeHeader "Diagnosis"
+    echo "Diagnosis"
     echo "Some required commands are not available:"
     for command in "${missing_commands[@]}"; do
         echo $command

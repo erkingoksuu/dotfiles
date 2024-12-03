@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 if [ $install_platform = "arch" ]; then
-    _writeLogHeader "AUR"
+    echo "AUR"
 
     yay_installed="false"
     paru_installed="false"
@@ -32,7 +32,7 @@ if [ $install_platform = "arch" ]; then
     }
 
     _selectAURHelper() {
-        _writeHeader "AUR Helper"
+        echo "AUR Helper"
         echo "Please select your preferred AUR Helper"
         echo
         aur_helper=$(gum choose "yay" "paru")
@@ -43,28 +43,26 @@ if [ $install_platform = "arch" ]; then
     }
 
     _checkAURHelper() {
-        if _checkCommandExists "yay"; then
-            _writeLog 0 "yay is installed"
+        if command -v "yay" > /dev/null; then
+            echo "yay is installed"
             yay_installed="true"
         fi
-        if _checkCommandExists "paru"; then
-            _writeLog 0 "paru is installed"
+        if command -v "paru" > /dev/null; then
+            echo "paru is installed"
             paru_installed="true"
         fi
         if [[ $yay_installed == "true" ]] && [[ $paru_installed == "false" ]] ;then
-            _writeLog 0 "Using AUR Helper yay"
+            echo "Using AUR Helper yay"
             aur_helper="yay"
         elif [[ $yay_installed == "false" ]] && [[ $paru_installed == "true" ]] ;then
-            _writeLog 0 "Using AUR Helper paru"
+            echo "Using AUR Helper paru"
             aur_helper="paru"
         elif [[ $yay_installed == "false" ]] && [[ $paru_installed == "false" ]] ;then
-            if [[ $(_check_update) == "false" ]] ;then
-                _selectAURHelper
-                if [[ $aur_helper == "yay" ]] ;then
-                    _installYay
-                else
-                    _installParu
-                fi
+            _selectAURHelper
+            if [[ $aur_helper == "yay" ]] ;then
+                _installYay
+            else
+                _installParu
             fi
         else
             _selectAURHelper

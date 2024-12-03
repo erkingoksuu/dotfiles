@@ -1,10 +1,10 @@
 # ------------------------------------------------------
 # Prepare dotfiles
 # ------------------------------------------------------
-_writeLogHeader "Preparation"
+echo "Preparation"
 
 # Check existing .config folder
 if [ ! -d ~/.config ]; then
     mkdir ~/.config
-    _writeLog 1 "$HOME/.config folder created."
+    echo "$HOME/.config folder created."
 fi
