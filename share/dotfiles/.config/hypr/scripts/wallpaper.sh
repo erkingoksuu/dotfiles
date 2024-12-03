@@ -111,6 +111,14 @@ echo ":: Stop all running waybar instances"
 killall waybar
 pkill waybar
 
+# -----------------------------------------------------
+# Stop all running nwg-dock-hyprland instances
+# -----------------------------------------------------
+
+echo ":: Stop all running nwg-dock-hyprland instances"
+killall nwg-dock-hyprland
+pkill nwg-dock-hyprland
+
 # ----------------------------------------------------- 
 # Execute pywal
 # ----------------------------------------------------- 
@@ -124,6 +132,12 @@ source "$HOME/.cache/wal/colors.sh"
 # -----------------------------------------------------
 
 ~/.config/waybar/launch.sh
+
+# -----------------------------------------------------
+# Reload nwg-dock-hyprland
+# -----------------------------------------------------
+
+~/.config/nwg-dock-hyprland/launch.sh
 
 # ----------------------------------------------------- 
 # Pywalfox

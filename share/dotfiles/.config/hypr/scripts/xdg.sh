@@ -52,5 +52,5 @@ systemctl --user start wireplumber
 systemctl --user start xdg-desktop-portal 
 systemctl --user start xdg-desktop-portal-hyprland
 
-# Run wallpaper-restore with waypaper and waybar
+# Run wallpaper-restore to reload waypaper then waybar and nwg-dock-hyprland
 ~/.config/hypr/scripts/wallpaper-restore.sh
