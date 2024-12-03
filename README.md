@@ -6,6 +6,11 @@ The installation should work on all Arch Linux and Fedora based distributions.
 
 ```
 bash
+```
+
+then,
+
+```
 bash <(curl -s https://raw.githubusercontent.com/erkingoksuu/dotfiles/main/setup-arch.sh)
 ``` 
 
@@ -13,5 +18,10 @@ bash <(curl -s https://raw.githubusercontent.com/erkingoksuu/dotfiles/main/setup
 
 ```
 bash
+```
+
+then,
+
+```
 bash <(curl -s https://raw.githubusercontent.com/erkingoksuu/dotfiles/main/setup-fedora.sh)
 ```
