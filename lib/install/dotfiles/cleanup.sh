@@ -17,7 +17,7 @@ rasi_file="$HOME/.config/main/cache/current_wallpaper.rasi"
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
     touch $cache_file
-    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
+    echo "$HOME/Pictures/hyprland.jpg" > "$cache_file"
     echo "Wallpaper cache file created"
 fi
 

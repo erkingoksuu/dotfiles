@@ -130,7 +130,7 @@ done
 if [ ! -d ~/Downloads ]; then
     mkdir ~/Downloads
     echo ":: Downloads folder created"
-fi 
+fi
 
 # Remove existing downloaded folder and zip files 
 if [ -d $HOME/Downloads/dotfiles ]; then

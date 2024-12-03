@@ -29,7 +29,7 @@ cachefile="$HOME/.config/main/cache/current_wallpaper"
 blurredwallpaper="$HOME/.config/main/cache/blurred_wallpaper.png"
 squarewallpaper="$HOME/.config/main/cache/square_wallpaper.png"
 rasifile="$HOME/.config/main/cache/current_wallpaper.rasi"
-defaultwallpaper="$HOME/wallpaper/default.jpg"
+defaultwallpaper="$HOME/Pictures/hyprland.jpg"
 wallpapereffect="$HOME/.config/main/settings/wallpaper-effect.sh"
 blur="50x30"
 
