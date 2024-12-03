@@ -66,7 +66,7 @@ _confirm_setup_type() {
         if gum confirm "Do you want use this choice?" ;then
             ./backup-hyprland-setup -p fedora -m full
         elif [ $? -eq 130 ]; then
-            _writeCancel
+            echo ":: Setup canceled"
             exit 130
         else
             _define_setup_type
@@ -75,7 +75,7 @@ _confirm_setup_type() {
         if gum confirm "Do you want use this choice?" ;then
             ./backup-hyprland-setup -p fedora -m dotfiles
         elif [ $? -eq 130 ]; then
-            _writeCancel
+            echo ":: Setup canceled"
             exit 130
         else
             _define_setup_type

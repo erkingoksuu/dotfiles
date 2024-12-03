@@ -31,10 +31,10 @@ _copy_confirm() {
         rsync -avhr -I "$src_dir" "$dest_dir"
         echo "Kopyalama işlemi tamamlandı."
     elif [ $? -eq 130 ]; then
-        _writeCancel
+        echo ":: Setup canceled"
         exit 130
     else
-        _writeCancel
+        echo ":: Setup canceled"
         exit
     fi
 }

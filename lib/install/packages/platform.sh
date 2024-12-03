@@ -45,11 +45,11 @@ case $install_platform in
         echo "Installation on Fedora based platform"
     ;;
     CANCEL)
-        _writeCancel
+        echo ":: Setup canceled"
         exit
     ;;
     *)
-        _writeCancel
+        echo ":: Setup canceled"
         exit
     ;;
 esac

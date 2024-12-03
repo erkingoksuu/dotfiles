@@ -43,10 +43,10 @@ if [[ ! -z $missing_commands ]]; then
     if gum confirm "Do you want to proceed?" ;then
         echo
     elif [ $? -eq 130 ]; then
-        _writeCancel
+        echo ":: Setup canceled"
         exit 130
     else
-        _writeCancel
+        echo ":: Setup canceled"
         exit
     fi
 else
