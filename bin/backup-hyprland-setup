@@ -17,6 +17,7 @@ bin_directory="$base_directory/bin"
 share_directory="$base_directory/share"
 lib_directory="$base_directory/lib"
 
+install_directory="$lib_directory/install"
 dotfiles_directory="$share_directory/dotfiles"
 packages_directory="$share_directory/packages"
 
@@ -28,11 +29,6 @@ if [ -f $HOME/.config/main/settings/platform.sh ]; then
     install_platform=$(cat $HOME/.config/main/settings/platform.sh)
 fi
 install_mode="full"
-
-# ----------------------------------------------------- 
-# Version
-# -----------------------------------------------------
-version="$(cat $dotfiles_directory/.config/main/version/name)"
 
 # ----------------------------------------------------- 
 # Run full installation
