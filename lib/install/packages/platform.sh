@@ -39,10 +39,10 @@ fi
 # Check if platform is supported
 case $install_platform in
     arch)
-        _writeLogTerminal 0 "Installation on Arch based platform"
+        echo "Installation on Arch based platform"
     ;;
     fedora)
-        _writeLogTerminal 0 "Installation on Fedora based platform"
+        echo "Installation on Fedora based platform"
     ;;
     CANCEL)
         _writeCancel

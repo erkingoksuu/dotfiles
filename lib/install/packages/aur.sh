@@ -17,7 +17,7 @@ if [ $install_platform = "arch" ]; then
         cd ~/Downloads/yay
         makepkg -si
         cd $temp_path
-        _writeLogTerminal 1 "yay has been installed successfully."
+        echo "yay has been installed successfully."
     }
 
     _installParu() {
@@ -28,7 +28,7 @@ if [ $install_platform = "arch" ]; then
         cd ~/Downloads/paru
         makepkg -si
         cd $temp_path
-        _writeLogTerminal 1 "paru has been installed successfully."
+        echo "paru has been installed successfully."
     }
 
     _selectAURHelper() {
@@ -39,7 +39,7 @@ if [ $install_platform = "arch" ]; then
         if [ -z $aur_helper ] ;then
             _selectAURHelper
         fi
-        _writeLogTerminal 0 "Using $aur_helper as AUR Helper"
+        echo "Using $aur_helper as AUR Helper"
     }
 
     _checkAURHelper() {

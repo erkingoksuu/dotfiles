@@ -4,7 +4,7 @@
 _writeLogHeader "Confirm installation"
 
 if gum confirm "DO YOU WANT TO INSTALL THE REQUIRED PACKAGES FOR Backup Dotfiles?" ;then
-    _writeLogTerminal 0 "Installation started"
+    echo "Installation started"
 elif [ $? -eq 130 ]; then
     _writeCancel
     exit 130

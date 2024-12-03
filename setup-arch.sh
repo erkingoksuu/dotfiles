@@ -52,7 +52,7 @@ _define_setup_type() {
     echo
     if [[ $choice == "full" || $choice == "dotfiles" ]]; then
         echo
-        _writeLogTerminal 0 "Your chice is $choice"
+        echo "Your chice is $choice"
         _confirm_setup_type
     else
         echo "Please choose correct one."

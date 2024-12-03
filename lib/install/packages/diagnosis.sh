@@ -32,7 +32,7 @@ _run_diagnosis
 
 if [[ ! -z $missing_commands ]]; then
     _writeHeader "Diagnosis"
-    _writeLogTerminal 2 "Some required commands are not available:"
+    echo "Some required commands are not available:"
     for command in "${missing_commands[@]}"; do
         echo $command
     done
@@ -50,5 +50,5 @@ if [[ ! -z $missing_commands ]]; then
         exit
     fi
 else
-    _writeLogTerminal 1 "Required commands checked"
+    echo "Required commands checked"
 fi

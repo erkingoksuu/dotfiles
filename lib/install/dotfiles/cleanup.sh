@@ -30,7 +30,7 @@ fi
 
 # Check for ttf-ms-fonts
 if [[ $(_isInstalled "ttf-ms-fonts") == 0 ]]; then
-    _writeLogTerminal 0 "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
+    echo "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
     if gum confirm "Do you want to uninstall ttf-ms-fonts?" ;then
         _removePackage "ttf-ms-fonts"
     fi
