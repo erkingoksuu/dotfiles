@@ -33,7 +33,7 @@ if [ $install_platform = "arch" ]; then
 
     _selectAURHelper() {
         _writeHeader "AUR Helper"
-        _writeMessage "Please select your preferred AUR Helper"
+        echo "Please select your preferred AUR Helper"
         echo
         aur_helper=$(gum choose "yay" "paru")
         if [ -z $aur_helper ] ;then

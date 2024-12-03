@@ -7,6 +7,6 @@ _writeLogHeader "Required packages"
 source $packages_directory/$install_platform/installer.sh
 
 # Install packages which required
-_writeMessage "Checking required packages for the installer..."
+echo "Checking required packages for the installer..."
 _installPackages "${packages[@]}";
 echo

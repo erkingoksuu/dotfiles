@@ -43,10 +43,10 @@ _installPackages() {
 choice=""
 
 _define_setup_type() {
-    _writeMessage "Please define setup type."
+    echo "Please define setup type."
     echo
-    _writeMessage "full: Run full installation"
-    _writeMessage "dotfiles: Run the setup of the dotfiles only"
+    echo "full: Run full installation"
+    echo "dotfiles: Run the setup of the dotfiles only"
     echo
     choice=$(gum input --placeholder "Enter enter setup type")
     echo
@@ -55,7 +55,7 @@ _define_setup_type() {
         _writeLogTerminal 0 "Your chice is $choice"
         _confirm_setup_type
     else
-        _writeMessage "Please choose correct one."
+        echo "Please choose correct one."
         _define_setup_type
     fi
 }

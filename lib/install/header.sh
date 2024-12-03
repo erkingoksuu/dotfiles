@@ -20,8 +20,8 @@ echo "Platform: $install_platform"
 echo
 if [[ $(_check_update) == "true" ]] ;then
     _writeLog 0 "An existing Backup Dotfiles installation detected."
-    _writeMessage "This script will guide you through the update process of the Backup Dotfiles."
+    echo "This script will guide you through the update process of the Backup Dotfiles."
 else
     _writeLog 0 "Initial installation of Backup Dotfiles started."
-    _writeMessage "This script will guide you through the installation process of the Backup dotfiles."
+    echo "This script will guide you through the installation process of the Backup dotfiles."
 fi
