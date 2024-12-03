@@ -15,7 +15,6 @@ cat <<"EOF"
 EOF
 echo "for Hyprland"
 echo -e "${NONE}"
-echo "Version: $version"
 echo "Platform: $install_platform" 
 echo
 echo "Initial installation of Backup Dotfiles started."
