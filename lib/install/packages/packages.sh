@@ -2,7 +2,6 @@
 # Install packages
 # ------------------------------------------------------
 echo "Packages"
-echo "Packages"
 
 # Hyprland
 source $packages_directory/$install_platform/hyprland.sh
